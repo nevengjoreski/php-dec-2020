@@ -1,3 +1,9 @@
+<style>
+    table, td, th {
+        border: 1px solid black;
+        
+    }
+</style>
 <?php
 
 // Relaciski / za sporedba ( ==, ===, !=, !== , < , > , <= ...)
@@ -209,6 +215,26 @@ foreach( $serii as $key => $serija){
 }
 echo '</ul>';
 
+echo '<table>';
+echo "
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+";
+foreach( $serii as $row_no => $serija){
+    echo '<tr>';
+    echo "<td>$row_no</td>";
+    echo '<td> ' . $serija . '</td>';
+    echo '</tr>';
+}
+echo '
+</tbody>
+</table>';
+die;
 $persons = [ 
     [
         'name' => 'Neven', 
