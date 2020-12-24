@@ -47,21 +47,12 @@ function getSumOfNumbers( $b1, $b2, $b3 = 0 ){
 // todo: nizata so min max vo funkcija
 echo '<br>';
 $niza = [ 12 , 45, 65, 87, 72, 3, 99, 54, -1 ];
-
 $presmetana = presmetkiOdNiza($niza);
+printPresmetanaNiza($presmetana);
 
 $niza2 = [ 12 , 45];
 $presmetana2 = presmetkiOdNiza($niza2);
-
-echo "  Minimumot e : {$presmetana['min']} <br> 
-        Maksimumot e : {$presmetana['max']} <br> 
-        Srednata vrednost : {$presmetana['sredna']} <br> 
-        Proizvodot e : {$presmetana['proizvod']} <br>";
-
-echo "  Minimumot e : {$presmetana2['min']} <br> 
-    Maksimumot e : {$presmetana2['max']} <br> 
-    Srednata vrednost : {$presmetana2['sredna']} <br> 
-    Proizvodot e : {$presmetana2['proizvod']} <br>";
+printPresmetanaNiza($presmetana2);
 
 
 function presmetkiOdNiza($niza){
@@ -97,4 +88,13 @@ function presmetkiOdNiza($niza){
         'sredna'    => $sredna,
         'proizvod'  => $proizvod
     ];
+}
+
+function printPresmetanaNiza($niza){
+
+    echo "  Minimumot e : {$niza['min']} <br> 
+        Maksimumot e : {$niza['max']} <br> 
+        Srednata vrednost : {$niza['sredna']} <br> 
+        Proizvodot e : {$niza['proizvod']} <br>
+        <hr>";
 }
