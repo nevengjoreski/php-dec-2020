@@ -134,7 +134,8 @@ pre($merged);
 unset($merged[2]);
 pre($merged);
 
-// todo: reset the keys of array
+$merged = array_values($merged);
+pre($merged);
 
 
 
