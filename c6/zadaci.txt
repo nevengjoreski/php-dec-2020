@@ -1,0 +1,22 @@
+1 Write a PHP script to get the information about the operating system PHP is running on.
+
+2 Write a PHP script to get the information about all the files in the existing directory
+
+3 Write a PHP program to convert word to digit.
+    Input: zero;three;five;six;eight;one
+    Output: 035681
+
+4 Write a PHP program to remove duplicates from a sorted list.
+    $niza = [ 54 , 23, 65 , 14 , 23 , 66, 54];
+
+5 Write a PHP program that checks if a word is palindrom
+
+6 Write a PHP program to return all elements in a given array except for the first one
+
+7 Write a PHP program to reverse the string
+
+BONUS
+
+8 proverete kolku ja znaete sintaksata https://www.w3schools.com/php/exercise.asp
+
+9 Napravete kalkulator 

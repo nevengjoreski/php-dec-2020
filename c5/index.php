@@ -23,6 +23,7 @@
         <br><br>
 
         <input type="submit" value="LogIn">
+        <!-- <input type="button" value="LogIn" onclick="this.form.submit()"> -->
 
     </form>
 

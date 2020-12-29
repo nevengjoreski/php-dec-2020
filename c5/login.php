@@ -6,6 +6,8 @@ function pre($array){
 }
 
 pre($_POST);
+pre($_GET);
+pre($_REQUEST);
 
 $username = $_POST['username'];
 $password = $_POST['password'];
