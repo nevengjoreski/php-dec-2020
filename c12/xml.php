@@ -64,3 +64,15 @@ foreach($object_as_xml->student as $student){
     echo "<br> Studentot e $student->name $student->lastname 
     gi znae : " , implode( ' ', (array)$student->languages->language);
 }
+
+// hacking the Sh1% out of xml
+
+$object_as_xml = json_decode(
+                    json_encode(
+                        simplexml_load_string($string_as_xml_2)
+                    ), true
+                );
+
+echo '<pre>';
+print_r($object_as_xml);
+echo '</pre>';
