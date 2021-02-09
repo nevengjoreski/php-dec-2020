@@ -1,10 +1,8 @@
 <?php
 
-function getOpenWeatherData($city){
+function getOpenWeatherData($city, $mode){
 
     $api_key = 'e8b5e755995d25633d3ae9f52219fd0c';
-    // $mode = 'html';
-    $mode = 'json';
     $units = 'metric';
 
     $url = 'http://api.openweathermap.org/data/2.5/weather';
@@ -24,6 +22,11 @@ function getOpenWeatherData($city){
     $response = curl_exec($curl);
     curl_close($curl);
 
-    return json_decode($response, true);
+    switch($mode){
+        case "json":
+            $response = json_decode($response, true);
+            break;
+    }
+    return $response;
 
 }

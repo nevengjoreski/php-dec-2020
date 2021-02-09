@@ -1,15 +1,17 @@
 <?php
 require "endpoint.php";
-$city = 'Skopje';
+
+$city = $_REQUEST['city'] ?? 'Skopje';
+$mode = $_REQUEST['mode'] ?? 'html';
+
 $modes = [ 'json', 'html'];
 
-$response = getOpenWeatherData($city);
+$response = getOpenWeatherData($city, $mode);
 
-$background_url = "http://openweathermap.org/img/w/{$response['weather'][0]['icon']}.png";
-
+if($mode === 'json') {
+    $background_url = "http://openweathermap.org/img/w/{$response['weather'][0]['icon']}.png";
 ?>
-
-<table class="table table-dark table-striped">
+<table class="table table-dark table-striped container mt-5">
     <thead>
         <tr>
             <th>City Name</th>
@@ -36,26 +38,34 @@ $background_url = "http://openweathermap.org/img/w/{$response['weather'][0]['ico
         </tr>
     </tbody>
 </table>
+<?php } else { ?>
+
+    <div class="container" style="display:flex; justify-content:center;">
+        <div><?= $response ?></div>
+    </div>
+
+<?php } ?>
 
 <div class="container">
-    <div class="col-md-6">
-        <label for="">City</label>
-        <input type="text" class="form-control" name="city">
-    </div>
+    <form method="POST">
+        <div class="d-grid">
+            <label for="">City</label>
+            <input type="text" class="form-control" name="city" value="<?= $_REQUEST['city'] ?? '' ?>">
+        </div>
 
-    <div class="col-md-6">
-        <label for="">Mode</label>
-        <select name="mode" class="form-control">
-            <?php foreach($modes as $mode) { ?>
-                <option><?= $mode ?></option>
-            <?php } ?>
-        </select>
-    </div>
+        <div class="d-grid">
+            <label for="">Mode</label>
+            <select name="mode" class="form-control">
+                <?php foreach($modes as $mode) { ?>
+                    <option><?= $mode ?></option>
+                <?php } ?>
+            </select>
+        </div>
 
-    <div class="d-grid mt-3">
-        <input class="btn btn-warning btn-block" type="submit" value="Get API">
-    </div>
-
+        <div class="d-grid mt-3">
+            <input class="btn btn-warning btn-block" type="submit" value="Get API">
+        </div>
+    </form>
 </div>
 
 
