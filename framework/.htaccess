@@ -1,0 +1,10 @@
+#ErrorDocument 404 "Web site upgrade ! Please contact <a href=\"mailto:owner@google.com\"> Send Email </a>"
+#Redirect /php-dec-2020/framework https://google.com
+#Redirect /php-dec-2020/framework /php-dec-2020/c15/posta.php
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule (.+) /php-dec-2020/framework/index.php?parameters=$1
