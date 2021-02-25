@@ -1,5 +1,13 @@
 <div class="container">
 
+    <?php 
+        if(count($students) === 1){
+            echo '<a href="'.ROOT_URL.'/student/index" class="btn btn-primary my-5"> <-- </a>';
+        } else {
+            echo '<a href="'.ROOT_URL.'" class="btn btn-primary my-5"> <-- </a>';
+        }
+    ?>
+    
     <?php
 
         if(isset($_SESSION) && isset($_SESSION['message'])){

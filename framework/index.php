@@ -1,7 +1,7 @@
 <?php
 session_start();
 $default = [
-    'controller' => 'student',
+    'controller' => 'home',
     'method' => 'index',
     'id' => '',
 ];
@@ -34,13 +34,6 @@ switch(count($parameters)){
     default:
         die('Vesovte premnogu parametri');
 }
-// student/show/1 za konkreten student
-// student/index   za site studenti
-
-// CONTROLLER ( MODEL ) / METHOD ( ACTION ) / ID ( IF AVAILABLE)
-// controller/method/id
-
-
 
 $filename = ucfirst($controller);
 $controller_filename    = "controllers/{$filename}Controller.php";  // controllers/StudentController.php
@@ -55,6 +48,7 @@ if(file_exists($controller_filename) && file_exists($model_filename)){
 
     // TODO: AUTHENTICATE USER 
 
+    
     $controller_name = $filename . 'Controller'; // StudentController
     $object = new $controller_name; // $object = new StudentController
 
@@ -68,6 +62,5 @@ if(file_exists($controller_filename) && file_exists($model_filename)){
     die('Povikavte nepostoecki fajlovi ( controller / model ) ');
 }
 
-
+require_once '_includes/scripts.php';
 ?>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">

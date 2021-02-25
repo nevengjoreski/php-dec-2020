@@ -1,6 +1,6 @@
 
 <div class="container">
-<a href="<?= ROOT_URL ?>" class="btn btn-primary my-5"> <-- </a>
+<a href="<?= ROOT_URL ?> /student/index" class="btn btn-primary my-5"> <-- </a>
     <form action="<?= $action ?>" class="row" method="post">
 
         <input type="hidden" name="id" value="<?= $id ?? '' ?>">

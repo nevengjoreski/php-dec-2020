@@ -39,6 +39,35 @@ class StudentController {
 
         $studentModel->insert($data);
         //redirect to ROOT_URL
-        header("Location: " . ROOT_URL);
+        header("Location: " . ROOT_URL . 'student/index');
+    }
+
+    function delete($id){
+
+        $studentModel = new Student;
+        $studentModel->delete($id);
+        //redirect to ROOT_URL
+        header("Location: " . ROOT_URL . 'student/index');
+    }
+
+    function edit($id){
+
+        $studentModel = new Student;
+        $student = $studentModel->getById($id);
+
+        $action = ROOT_URL . 'student/update';
+        $button_label = 'Update';
+
+        include 'views/student/create_edit.php';
+    }
+
+    function update($param){
+
+        $data = !empty($param) ? $param : $this->request;
+
+        $studentModel = new Student;
+        $studentModel->update($data);
+        
+        header("Location: " . ROOT_URL . 'student/index');
     }
 }

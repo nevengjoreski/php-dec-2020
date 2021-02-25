@@ -50,5 +50,50 @@ class Student {
     
         return $return;
     }
+
+    
+    function delete($id){
+        global $db;
+        // $GLOBALS['db'];
+
+       $sql = 'DELETE FROM studenti WHERE id = :id';
+       $query = $db->prepare($sql);
+       $return = $query->execute([
+           ':id' => $id
+       ]);
+
+       $_SESSION['message'] = 'Successfully deleted student with ID => ' . $id;
+       $_SESSION['message_type'] = $return ? 'success' : 'danger';
+    }
+
+    function update($data){
+        global $db;
+
+        extract($data);
+        $sql = '
+            UPDATE studenti
+            SET
+                name = :name,
+                lastname = :lastname,
+                age = :age,
+                email = :email,
+                phone = :phone
+            WHERE
+                id = :id
+        ';
+
+        $query = $db->prepare($sql);
+        $return = $query->execute([
+            ':id' => $id,
+            ':name' => $name,
+            ':lastname' => $lastname,
+            ':email' => $email,
+            ':phone' => $phone,
+            ':age' => $age
+        ]);
+
+        $_SESSION['message'] = 'Successfully updated student with ID => ' . $id;
+        $_SESSION['message_type'] = $return ? 'success' : 'danger';
+    }
     
 }
