@@ -1,4 +1,5 @@
 <?php
+require_once 'models/Transaction.php';
 
 class StudentController {
 
@@ -12,6 +13,9 @@ class StudentController {
 
         $studentModel = new Student;
         $student = $studentModel->getById($id);
+
+        $transactionModel = new Transaction;
+        $transactions = $transactionModel->getByStudentId($id);
         
         $students = [$student];
         include 'views/student/index.php';

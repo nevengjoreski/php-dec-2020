@@ -24,7 +24,7 @@
     ?>
 
         
-    <table class="table table-dark table-striped">
+    <table class="table table-warning table-striped">
         <thead>
             <tr>
                 <th>#</th>

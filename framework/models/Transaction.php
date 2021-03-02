@@ -20,6 +20,20 @@ class Transaction {
         return $query->fetch(PDO::FETCH_ASSOC);
     }
 
+    function getByStudentId($id){
+        global $db;
+
+       $sql = 'SELECT *
+               FROM transactions
+               WHERE student_id = :id';
+       $query = $db->prepare($sql);
+       $query->execute([
+           ':id' => $id
+       ]);
+
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     function getAll(){
         global $db;
 

@@ -41,7 +41,7 @@
         </div>
 
         <div class="d-grid mt-3">
-            <input type="submit" class="btn btn-block btn-warning" value="<?= $button_label?> Student">
+            <input type="submit" class="btn btn-block btn-warning" value="<?= $button_label?> Transaction">
         </div>
     </form>
 </div>
