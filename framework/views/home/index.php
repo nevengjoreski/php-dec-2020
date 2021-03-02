@@ -10,10 +10,13 @@
 
     <div class="navigation-menu">
         <div class="nav custom">
-            <a href="<?= ROOT_URL . '/student/index' ?>">Studenti</a>
+            <a class="btn btn-success" href="<?= ROOT_URL . '/student/index' ?>">Studenti</a>
         </div>
         <div class="nav custom">
-            <a href="<?= ROOT_URL . '/transaction/index' ?>">Transaction</a>
+            <a class="btn btn-success" href="<?= ROOT_URL . '/transaction/index' ?>">Transaction</a>
+        </div>
+        <div class="nav custom">
+            <a class="btn btn-success" href="<?= ROOT_URL . '/user/create' ?>">Create User</a>
         </div>
     </div>
 
@@ -30,5 +33,3 @@
 
     </style>
     
-</body>
-</html>

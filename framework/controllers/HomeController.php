@@ -19,6 +19,9 @@ class HomeController {
 
         $displayTransacitions = false;
         
+
+        include 'views/home/index.php';
+
         include 'views/student/index.php';
         include 'views/transaction/index.php';
 

@@ -44,10 +44,14 @@ if(file_exists($controller_filename) && file_exists($model_filename)){
     require_once $model_filename;
     require_once '_includes/db_connection.php';
     require_once '_includes/general_functions.php';
+    require_once '_includes/authentication_functions.php';
     require_once '_includes/variables.php';
 
     // TODO: AUTHENTICATE USER 
-
+    
+    // uncomment this line to enable the authentication
+    // create a user first
+    // require_auth_db() ?: reject();
     
     $controller_name = $filename . 'Controller'; // StudentController
     $object = new $controller_name; // $object = new StudentController
