@@ -1,0 +1,8 @@
+composer -V
+
+composer install
+
+composer require twig/twig
+composer require phpoffice/phpspreadsheet
+composer require symfony/var-dumper
+composer require filp/whoops

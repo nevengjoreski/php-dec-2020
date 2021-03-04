@@ -1,0 +1,8 @@
+{
+    "require": {
+        "twig/twig": "^3.3",
+        "phpoffice/phpspreadsheet": "^1.17",
+        "symfony/var-dumper": "^5.2",
+        "filp/whoops": "^2.9"
+    }
+}
